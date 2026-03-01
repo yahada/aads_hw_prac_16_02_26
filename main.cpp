@@ -43,4 +43,7 @@ int main()
   {
     std::cout << c[i] << '\n';
   }
+  delete[] a;
+  delete[] b;
+  delete[] c;
 }
