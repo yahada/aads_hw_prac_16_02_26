@@ -43,10 +43,11 @@ T* mergeN(const T* const * a, size_t sa, const size_t * sai, T* c)
 
   for (size_t i = 1; i < sa; ++i)
   {
-    T* tmp = new T[sai[i] + s];
+    T* tmp = nullptr;
 
     try
     {
+      T* tmp = new T[sai[i] + s];
       merge2(c, s, a[i], sai[i], tmp);
       for(size_t k = 0; k < sai[i] + s; ++k)
       {
