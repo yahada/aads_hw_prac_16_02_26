@@ -28,7 +28,7 @@ T* merge2(const T* a, size_t sa, const T* b, size_t sb, T* c)
     c[k++] = b[j++];
   }
 
-  return c;
+  return c + sa + sb;
 }
 
 template< class T >
@@ -64,13 +64,13 @@ T* mergeN(const T* const * a, size_t sa, const size_t * sai, T* c)
     delete[] tmp;
   }
 
-  return c;
+  return c + s;
 }
 
 /*
 НЕЯВНЫЙ ИНТЕРФЕЙС:
 -Конструктор по умолчанию
--Оператор копирования
+-Присвыивающий оператор копирования
 -Оператор сравнения(<)
 
 НЕДОСТАТКИ ЯВНОГО ИНТЕРФЕЙСА:
